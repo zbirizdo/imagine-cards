@@ -23,6 +23,7 @@
             },
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "aot": true,
             "polyfills": [
               "zone.js"
             ],
