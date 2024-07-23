@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'swiper/scss';
+@import 'swiper/scss/effect-cards';
+
 :root {
   --bright-blue: oklch(51.01% 0.274 263.83);
   --electric-violet: oklch(53.18% 0.28 296.97);
@@ -36,6 +39,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 3.125rem;
   color: var(--gray-900);
@@ -64,7 +71,7 @@ main {
 }
 
 .logo {
-  max-width: 16rem;
+  height: 100px;
 }
 
 .subtitle {
@@ -173,6 +180,7 @@ main {
 
 .content {
   .left-side {
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,84 +189,4 @@ main {
   .right-side {
     padding-top: 30px;
   }
-}
-
-.table {
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.6;
-
-  background-color: transparent;
-  perspective: 800px;
-  width: 270px;
-  height: 365px;
-}
-
-.table:hover .card {
-  transform: rotateY(180deg);
-}
-
-.card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-}
-
-.clue {
-  display: flex;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid #c47797;
-  }
-}
-
-.clue.even .clue-number {
-  background-color: #01294d;
-}
-
-.clue.odd .clue-number {
-  background-color: #0691a8;
-}
-
-.clue-number {
-  flex: 0 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-}
-
-.clue-details {
-  flex: 1 1 100%;
-}
-
-.clue-category {
-  padding: 0 8px;
-  text-transform: uppercase;
-  color: #01122e;
-  background-color: #d5e9ea;
-}
-
-.clue-expression {
-  padding: 0 8px;
-  color: #289c9c;
-  background-color: #fafeff;
 }

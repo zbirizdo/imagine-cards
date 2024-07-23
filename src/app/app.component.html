@@ -6,31 +6,29 @@
       </a>
       <small class="subtitle">Custom enigma card generator</small>
 
-      <p><a href="https://docs.google.com/spreadsheets/d/1r1oDjrgLMdIsmiAu4H3sIM5RXgN3FgIaeO4F5uh714I" target="_blank">Clues</a> loaded: {{(clues$ | async)?.length}}</p>
+      <p><a href="https://docs.google.com/spreadsheets/d/1r1oDjrgLMdIsmiAu4H3sIM5RXgN3FgIaeO4F5uh714I" target="_blank">Clues</a>: {{unplayedClues}} / {{clues.length}}</p>
 
-      <div class="table">
-        <div class="card">
-          <div class="card-front">
-            @for (clue of card.front; track clue.id) {
-              <div class="clue {{$even ? 'even' : 'odd'}}">
-                <div class="clue-number">{{$index + 1}}</div>
-                <div class="clue-details">
-                  <div class="clue-category">{{clue.category}}</div>
-                  <div class="clue-expression">{{clue.expression}}</div>
+      <div class="cards swiper">
+        <div class="swiper-wrapper">
+          @for (card of cards; track $index) {
+            <div class="card swiper-slide">
+              @for (clue of card; track clue.id) {
+                <div class="clue" [ngClass]="{ 'even': $even, 'odd': $odd, 'active': clue.isActive}" (click)="toggleSelection($index)">
+                  <div class="clue-number">{{$index + 1}}</div>
+                  <div class="clue-details">
+                    <div class="clue-category">{{clue.category}}</div>
+                    <div class="clue-expression">{{clue.expression}}</div>
+                  </div>
                 </div>
-              </div>
-            }
-          </div>
-          <div class="card-back">
-            @for (clue of card.back; track clue.id) {
-              <div class="clue {{$even ? 'even' : 'odd'}}">
-                <div class="clue-number">{{$index + 1}}</div>
-                <div class="clue-details">
-                  <div class="clue-category">{{clue.category}}</div>
-                  <div class="clue-expression">{{clue.expression}}</div>
-                </div>
-              </div>
-            }
+              }
+            </div>
+          }
+          <div class="card swiper-slide end-game">
+            <div class="pill-group">
+              <button class="pill" (click)="reshuffle()">
+                <span>Reshuffle</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
