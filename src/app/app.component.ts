@@ -84,6 +84,10 @@ export class AppComponent implements OnInit {
     this.resetSwiper();
   }
 
+  refresh() {
+    window.location.reload();
+  }
+
   private resetSwiper() {
     if (this.swiper) {
       this.swiper.slideTo(0, 500, true);
@@ -98,13 +102,13 @@ export class AppComponent implements OnInit {
     console.log('used:', this.clues.filter(clue => clue.isActive).length);
   }
 
-  shuffleArray(array: any[]) {
+  private shuffleArray(array: any[]) {
     return array.map(value => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value)
   }
 
-  chunkArray<T>(array: T[], chunkSize = 8): T[][] {
+  private chunkArray<T>(array: T[], chunkSize = 8): T[][] {
     return array.reduce((result, _, index) => {
       if (index % chunkSize === 0) {
         result.push(array.slice(index, index + chunkSize));

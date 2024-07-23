@@ -76,13 +76,23 @@
 }
 
 .card.end-game {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  .spacing {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
 
   .pill-group .pill {
     --pill-accent: #057b8f;
     cursor: pointer;
+  }
+
+  p, span {
+    font-style: italic;
+    text-align: center;
   }
 }

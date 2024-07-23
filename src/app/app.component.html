@@ -24,10 +24,25 @@
             </div>
           }
           <div class="card swiper-slide end-game">
-            <div class="pill-group">
-              <button class="pill" (click)="reshuffle()">
-                <span>Reshuffle</span>
-              </button>
+            <div class="spacing">
+              @if(unplayedClues > 8) {
+                <div class="pill-group">
+                  <button class="pill" (click)="reshuffle()">
+                    <span>Reshuffle</span>
+                  </button>
+                </div>
+                <p>We are running out of cards...</p>
+                <span>Create new cards with the remaining clues randomized!</span>
+              }
+              @else {
+                <div class="pill-group">
+                  <button class="pill" (click)="refresh()">
+                    <span>Refresh</span>
+                  </button>
+                </div>
+                <p>Looks like you played your last card.</p>
+                <span>Refresh the page to start over!</span>
+              }
             </div>
           </div>
         </div>
