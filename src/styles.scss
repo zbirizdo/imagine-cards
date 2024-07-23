@@ -70,12 +70,21 @@ main {
   position: relative;
 }
 
-.logo {
-  height: 100px;
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-style: italic;
 }
 
-.subtitle {
-  font-style: italic;
+.logo {
+  cursor: pointer;
+  height: 100px;
+
+  &.small {
+    height: 20px;
+    margin-right: 3px;
+  }
 }
 
 .content {

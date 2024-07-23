@@ -27,7 +27,7 @@ interface Clue {
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  title = 'imagine-cards';
+  isSmallLogo = false;
 
   clues: Clue[] = [];
   unplayedClues = 0;
@@ -115,5 +115,9 @@ export class AppComponent implements OnInit {
       }
       return result;
     }, new Array<T[]>());
+  }
+
+  resizeLogo() {
+    this.isSmallLogo = !this.isSmallLogo;
   }
 }

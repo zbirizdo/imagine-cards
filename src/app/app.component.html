@@ -1,10 +1,10 @@
 <main class="main">
   <div class="content">
     <div class="left-side">
-      <a href="https://gamewright.com/product/Imagine" target="_blank">
-        <img class="logo" src="Imagine_logo.png" alt="logo">
-      </a>
-      <small class="subtitle">Custom enigma card generator</small>
+      <small class="subtitle">
+        <img class="logo" src="Imagine_logo.png" alt="logo" [ngClass]="{ 'small': isSmallLogo }" (click)="resizeLogo()">
+        Custom enigma card generator
+      </small>
 
       <p><a href="https://docs.google.com/spreadsheets/d/1r1oDjrgLMdIsmiAu4H3sIM5RXgN3FgIaeO4F5uh714I" target="_blank">Clues</a>: {{unplayedClues}} / {{clues.length}}</p>
 
