@@ -1,29 +1,34 @@
 # ImagineCards
 
-Visit: <a href="https://zbirizdo.github.io/imagine-cards/" target="_blank">Imagine cards</a>
+Have you ever played the [Imagine](https://gamewright.com/product/Imagine) board game for 2 hours straight and ran out of enigma cards? When everyone else was tired and mentally exhausted you was like "Boy, we need more cards!"? Really? Then, here you go, you sick board game enthusiast! Endless supply of enigma card:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+Just visit <a href="https://zbirizdo.github.io/imagine-cards/" target="_blank">Imagine cards</a>, set up your own cards and the fun never has to stop.
 
-## Development server
+*Please note, that I am not legally responsible for all the friends you lose along the way, use this for your own risk!*
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+***
+### This app doesn't replaces the board game, only extends it! You still need the physical game to play!      
+***
 
-## Code scaffolding
+This really simple app uses a Google Drive Sheet as a (readonly) database. Share the sheet with your friends, come up with your own unique enigmas and play them as you would play the regular board game.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*You are out of friends already? Maybe ask an AI to generate enigmas for you!*
 
-## Build
+### How does it work? How to use this?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+When you load the page, the app reads all enigmas, shuffles them and create cards with each 8 chunks
+*(there are no cards with enigmas less then 8, so if you have 10 enigmas 2 will be left out and when you reshuffle the "deck", those enigmas will have a chance to come into play).*
 
-## Running unit tests
+On each card you can select one enigma (tap and it will be highlighted).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Play your enigma and give your phone to the next person.
 
-## Running end-to-end tests
+The next person swipe left and he / she will get a new card. (you can't go to the next card without selecting an enigma)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+When all cards played you can reshuffle the "deck", and you will get new cards with the enigmas not played / selected yet.
 
-## Further help
+When all enigmas played too, that is when the game is over.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+If you refresh the page at any point, the game starts over. (and you lose your progress)
+
+Thats all. Have fun!
